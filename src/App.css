@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+:root {
+	--font-family: 'Outfit', sans-serif;
+
+	--bgcolor: #3b5473;
+	--bgcolor-2: #5b6f8c;
+	--text-primary: white;
+	--text-secondary: rgba(255, 255, 255, 0.596);
+	--bg-gradient: linear-gradient(to bottom, var(--bg-gradient-1), var(--bg-gradient-2));
+	--size-xs: clamp(1rem, calc(1rem + 0vw), 1.2rem);
+	--size-sm: clamp(1.2rem, calc(1rem + 0.5vw), 1.4rem);
+	--size-md: clamp(1.4rem, calc(1rem + 1vw), 1.8rem);
+	--size-lg: clamp(1.6rem, calc(1rem + 1.5vw), 2.2rem);
+	--size-xl: clamp(1.8rem, calc(1rem + 2vw), 2.6rem);
+	--size-xxl: clamp(2rem, calc(1rem + 2.5vw), 3rem);
+	--size-xxxl: clamp(10rem, calc(1rem + 12.5vw), 15rem);
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+body {
+	color: var(--text-primary);
+	font-family: var(--font-family);
+	font-size: var(--size-sm);
+	background: var(--bg-gradient);
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 500px;
+	min-height: 100vh;
+}
+
+.weather-content {
+	text-align: center;
+	margin-top: rem;
+	border-radius: 0 0 2rem 2rem;
+	padding: 1rem;
+}
+
+.nav-container {
+	display: flex;
+	justify-content: center;
+}
+
+nav {
+	display: flex;
+	max-width: 500px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	width: 100%;
+	height: 4rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.forecast-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-block: 10rem;
+}
+
+.forecast-temp {
+	font-weight: 400;
+	font-size: var(--size-xxxl);
+	margin: 0;
+}
+
+.forecast-units {
+	font-size: var(--size-sm);
+}
+
+.forecast-description {
+	color: var(--text-secondary);
+	text-transform: capitalize;
+}
+
+.highlights {
+	display: flex;
+	justify-content: space-between;
+}
+
+.days {
+	padding: 1rem;
+	margin-top: 2rem;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+}
+
+.highlight-detail {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+}
+
+.weather-day {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 1rem;
+	align-items: center;
+}
+
+.weather-day-info {
+	grid-column: 1 / span 2;
+}
+
+.weather-day-temperature .min {
+	color: var(--text-secondary);
+}
+
+.weather-day-info > .description {
+	color: var(--text-secondary);
+	text-transform: capitalize;
+}
+
+.weather-day span {
+	color: var(--text-primary);
+	flex: 1;
+}
+
+.autocomplete-dropdown-container {
+	background-color: white;
+	width: 100%;
+
+	border-radius: 0.5rem;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+.suggestion-item {
+	padding-inline: 0.8rem;
+	padding-block: 0.6rem;
+	cursor: pointer;
+}
+
+.suggestion-item-active {
+	padding-inline: 0.8rem;
+	padding-block: 0.6rem;
+	cursor: pointer;
+	background-color: whitesmoke;
+}
+
+.searchbar {
+	background-color: var(--text-primary);
+	width: 100%;
+	padding-inline: 0.8rem;
+	padding-block: 0.6rem;
+	border: none;
+	outline: none;
+	border-radius: 0.5rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.searchbar:placeholder {
+	color: var(--text-secondary);
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	justify-content: center;
+}
+
+.modal-content {
+	position: relative;
+	width: 400px;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background: var(--bg-gradient);
+}
+
+.button-icon {
+	background-color: transparent;
+	color: var(--text-primary);
+	padding: 0.5rem;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+	display: grid;
+	place-items: center;
+}
+
+.modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.modal-title {
+	font-size: var(--size-md);
+	font-weight: normal;
+}
+
+.button-icon:hover {
+	background-color: var(--bg-gradient-2);
+}
+
+.button-icon > span {
+	font-size: var(--size-lg);
+}
+
+.modal-buttons {
+	display: flex;
+	align-items: center;
+}
